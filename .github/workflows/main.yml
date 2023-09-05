@@ -1,0 +1,24 @@
+name: Automatic pull in EC2
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  Deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Run commands on EC2
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{secrets.HOST}}
+          username: ${{secrets.USER}}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          script: |
+            cd /home/ubuntu/capstone_django
+            git pull
+            sudo systemctl restart gunicorn
+
