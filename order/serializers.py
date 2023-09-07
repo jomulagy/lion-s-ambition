@@ -10,7 +10,7 @@ class MenuSerializer(serializers.ModelSerializer):
         fields = ["name","image","price"]
 
     def get_image(self,obj):
-        return obj.image.url
+        return settings.KIOSK_HOST+str(obj.image)
 
 class OrderSerializer(serializers.ModelSerializer):
     options = serializers.SerializerMethodField()
