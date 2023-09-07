@@ -21,7 +21,7 @@ class OrderSerializer(serializers.ModelSerializer):
         fields = ["id","brand","options","created_at","totalPrice"]
 
     def get_brand(self,instance):
-        return "OKDK"
+        return "lion's ambition"
 
     def get_options(self,instance):
         options = OptionSerializer(instance.option_set.all(),many=True).data
