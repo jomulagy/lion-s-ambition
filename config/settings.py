@@ -28,8 +28,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-KIOSK_HOST = "http://15.164.232.208"
-APP_HOST = "http://3.36.95.105/"
+KIOSK_HOST = "https://www.lionsambition.shop"
+APP_HOST = "https://www.okdkbackend.shop/"
 # Application definition
 
 INSTALLED_APPS = [
